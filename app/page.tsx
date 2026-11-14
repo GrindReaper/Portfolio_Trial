@@ -2,6 +2,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import {
   ArrowUpRight,
   Mail,
@@ -155,12 +156,14 @@ export default function Home() {
       {/* HERO */}
       <section
         id="home"
-        className="relative flex min-h-screen items-center overflow-hidden px-6 pt-28 lg:px-10"
+        className="relative flex min-h-screen items-center overflow-hidden px-6 pb-16 pt-32 lg:px-10"
       >
         <div className="absolute right-0 top-1/4 h-80 w-80 rounded-full bg-cyan-500/10 blur-[120px]" />
 
-        <div className="relative mx-auto w-full max-w-7xl">
-          <div className="max-w-4xl">
+        <div className="relative mx-auto grid w-full max-w-7xl items-center gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20">
+
+          {/* INTRODUCTION */}
+          <div className="relative z-10">
             <div className="mb-8 flex items-center gap-3">
               <span className="h-px w-10 bg-cyan-400" />
               <span className="text-sm uppercase tracking-[0.3em] text-cyan-400">
@@ -168,7 +171,7 @@ export default function Home() {
               </span>
             </div>
 
-            <h1 className="text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-8xl">
+            <h1 className="text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl xl:text-8xl">
               Aaron Paul
               <br />
               <span className="text-gray-500">Tiwan.</span>
@@ -196,9 +199,9 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="mt-16 flex items-center gap-5">
+            <div className="mt-12 flex items-center gap-5">
               <a
-                href="https://github.com/"
+                href="https://github.com/GrindReaper"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
@@ -208,7 +211,7 @@ export default function Home() {
               </a>
 
               <a
-                href="https://linkedin.com/"
+                href="https://www.linkedin.com/in/aaron-paul-tiwan-18473932b/"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
@@ -218,7 +221,7 @@ export default function Home() {
               </a>
 
               <a
-                href="mailto:hello@example.com"
+                href="mailto:aaronpaultiwan26@gmail.com"
                 aria-label="Email"
                 className="text-gray-400 transition hover:text-cyan-400"
               >
@@ -227,11 +230,35 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="absolute bottom-0 right-0 hidden text-right lg:block">
-            <p className="text-xs uppercase tracking-[0.3em] text-gray-600">
-              Based in
-            </p>
-            <p className="mt-2 text-sm text-gray-400">Philippines</p>
+          {/* PROFILE PHOTO */}
+          <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+            <div className="absolute -inset-5 rounded-[2rem] bg-cyan-400/10 blur-3xl" />
+
+            <div className="relative overflows-hidden rounded-[2rem] border border-cyan-400/30 bg-[#111115] p-2 shadow-2xl shadow-cyan-950/30">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem]">
+                <Image
+                  src="/profile.png"
+                  alt="Aaron Paul Tiwan - IT Professional"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 90vw, 40vw"
+                  className="object-cover object-center transition duration-700 hover:scale-105"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-[#09090b]/50 via-transparent to-transparent" />
+              </div>
+            </div>
+
+            <div className="absolute -bottom-5 -left-5 rounded-xl border border-white/10 bg-[#111115] px-5 py-4 shadow-xl sm:-left-8">
+              <p className="text-xs uppercase tracking-[0.2em] text-gray-500">
+                Based in
+              </p>
+              <p className="mt-1 text-sm font-semibold text-white">
+                Philippines
+              </p>
+            </div>
+
+            <div className="absolute -right-3 -top-4 h-16 w-16 rounded-full border border-cyan-400/30 sm:-right-5" />
           </div>
         </div>
       </section>
@@ -383,7 +410,7 @@ export default function Home() {
 
             <div className="lg:justify-self-end">
               <a
-                href="mailto:hello@example.com"
+                href="mailto:aaronpaultiwan26@gmail.com"
                 className="inline-flex items-center gap-3 border-b border-cyan-400 pb-3 text-xl font-medium transition hover:text-cyan-400 sm:text-2xl"
               >
                 Get in touch <ArrowUpRight size={24} />
